@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import CharacterTitle from '@/components/character-title';
 
 interface Character {
   name: string;
@@ -125,9 +126,7 @@ export default function CharacterDetail() {
                 <h1 className="text-2xl font-bold">Star Wars Universe.</h1>
               </div>
               
-              <div className="my-8">
-                <h2 className="text-7xl md:text-8xl font-bold">{character.name}</h2>
-              </div>
+              <CharacterTitle name={character.name} />
               
               <div>
                 <p className="text-lg">Film {character.films.map(filmUrl => {
